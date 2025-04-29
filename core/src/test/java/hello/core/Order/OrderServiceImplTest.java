@@ -19,5 +19,6 @@ public class OrderServiceImplTest {
         OrderServiceImpl orderService = new OrderServiceImpl(memberRepository, new FixDiscountPolicy());
         orderService.createOrder( 1L, "itemA", 10000);
         
+        
     }
 }
