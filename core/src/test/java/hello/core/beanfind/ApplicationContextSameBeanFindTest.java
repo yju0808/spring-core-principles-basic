@@ -7,9 +7,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
@@ -26,7 +26,7 @@ public class ApplicationContextSameBeanFindTest {
         assertThrows(NoSuchBeanDefinitionException.class, () -> ac.getBean(MemberRepository.class));
     }
 
-    @Configuration
+    @TestConfiguration
     static class SameBaenConfig {
         @Bean
         public MemberRepository memberRepository1() {
