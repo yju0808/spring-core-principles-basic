@@ -1,4 +1,8 @@
-# 🌿 스프링 핵심 원리 - 기본편
+# 🌿 스프링 핵심 원리 - 기본편 정리
+
+김영한님의 인프런 강의를 들으며 제공된 코드 예제를 실습한 레포입니다.
+
+---
 
 ## 📘 학습한 주요 개념
 
@@ -8,40 +12,33 @@
 - 관심사의 분리 (Separation of Concerns)
 
 ### 2️⃣ IoC / DI (제어의 역전 / 의존성 주입)
-- 스프링 이전 순수 자바 DI 구현  
-- 스프링 컨테이너를 통한 DI 구조  
+- 순수 자바 기반 DI 구성  
+- 스프링 컨테이너를 통한 의존성 주입  
 - 생성자 / 필드 / Setter 주입 방식 비교  
-- 자동 vs 수동 주입 전략
+- 자동 주입 vs 수동 주입  
+- 실무 기준에서의 DI 전략
 
 ### 3️⃣ 스프링 컨테이너와 빈 관리
 - ApplicationContext vs BeanFactory  
-- `@Bean`, `@Configuration` 기반 수동 등록  
-- `@ComponentScan`을 통한 자동 등록  
-- 빈 조회, 중복 처리, 우선순위 설정
+- `@Configuration`, `@Bean` 수동 등록  
+- `@ComponentScan` 자동 등록 및 필터링  
+- 빈 조회 및 중복 처리 전략
 
-### 4️⃣ 싱글톤 컨테이너와 생명주기
-- 싱글톤 보장 메커니즘  
-- `@Configuration`의 바이트코드 조작 원리  
-- 생명주기 콜백: `@PostConstruct`, `@PreDestroy`  
-- 초기화/종료 인터페이스: `InitializingBean`, `DisposableBean`
-
-### 5️⃣ 빈 스코프
-- 싱글톤, 프로토타입, 웹 스코프의 차이  
-- 스코프 간 의존성 문제 해결 (`ObjectProvider`, 프록시)
-
-### 6️⃣ 의존성 주입 고급
-- `@Qualifier`, `@Primary`로 빈 충돌 해결  
-- 옵션 주입 처리 (`required = false`, `Optional`)  
+### 4️⃣ 의존관계 주입 고급 기능
+- 주입 대상이 여러 개인 경우 처리 (`@Qualifier`, `@Primary`)  
+- 옵션 주입 (`required = false`, `Optional`)  
 - 다중 빈 주입 (`List`, `Map`)  
 - 커스텀 애노테이션 구성
 
-### 7️⃣ 실무 기준 DI 전략
-- 생성자 주입 우선 원칙  
-- 자동 vs 수동 주입의 기준  
-- 실무 환경에서의 컴포넌트 스캔 운영 방식
+### 5️⃣ 싱글톤과 생명주기, 스코프
+- 스프링의 싱글톤 보장 원리  
+- `@Configuration`의 바이트코드 조작  
+- 빈 생명주기 콜백 (`@PostConstruct`, `@PreDestroy`)  
+- 프로토타입, 웹 스코프 개념과 주의점  
+- 스코프 간 의존성 해결 (`ObjectProvider`, 프록시)
 
 ---
 
 ## 🔗 참고
-- 강의 링크: [스프링 핵심 원리 - 기본편](https://www.inflearn.com/course/스프링-핵심-원리-기본)  
+- 강의 링크: [스프링 핵심 원리 - 기본편](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8?attributionToken=qgHwqQoMCPGJ4sAGEICi25ACEAEaJDY4MmNhOGRiLTAwMDAtMmQzZi1hYTY2LTNjMjg2ZDRlNWU4MiokZTM4NWU2YzQtMzhiOC00MjExLWE4M2MtNjM2ZDZmZWY5NjI5MjCY1rctxcvzF8LwnhXUsp0Vjr6dFaOAlyK2t4wtqOWqLffowzCa7sYwkPeyMJvWty06DmRlZmF1bHRfc2VhcmNoSAFYAWABaAF6AnNp)  
 - 강사: 김영한
